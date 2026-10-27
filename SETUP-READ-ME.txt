@@ -1,0 +1,17 @@
+VEDDAS SAKTEE – Fix: Google Sheets Auto Save
+
+1. Open your existing project at https://script.google.com/home/projects/
+2. Open Code.gs, click inside the editor and press Ctrl+A to select ALL existing code (including any default function myFunction()).
+3. Replace it with the ENTIRE Code.gs included in this ZIP. Do not place the pasted code inside any other function. Save (Ctrl+S).
+4. Click Deploy > Manage deployments. Select your existing Web App deployment and click its Edit (pencil) icon.
+5. For Version choose New version; Execute as: Me; Who has access: Anyone. Save/Deploy and reauthorize if asked.
+6. Open the SAME Apps Script Web app URL (below) in a fresh Incognito tab:
+   https://script.google.com/macros/s/AKfycbwzGxTECEI33Sxxx8ysSzquVbCEEKYktqGfA3H5e8U15490-vp8Jm7tVyU0Do1dq48G/exec
+   It should say: VEDDAS SAKTEE lead receiver is ACTIVE. Leads sheet found.
+   If it says Script function not found: doGet, then Code.gs was not replaced fully or the deployment is still on the older version.
+7. Open index.html and submit a test lead marked TEST. Verify that a row appears in the Leads tab:
+   https://docs.google.com/spreadsheets/d/1OHcYBhCXNK0xcyKw9PA-hUavYi1I4LddnXaYbSw9J2Y/edit
+8. Delete the TEST row if you want after confirming the result.
+
+Do not publish the website until the test succeeds.
+Form does not collect payment card details or medical histories. Keep sheet private and add spam protection/privacy terms before publicly advertising.
