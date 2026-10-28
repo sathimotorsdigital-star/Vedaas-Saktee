@@ -276,6 +276,20 @@
         justify-content: center;
         overflow: hidden;
       }
+      .player.is-playing:before {
+        display: none;
+      }
+      .hero-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        background: #000;
+      }
+      .player.is-playing .video-content {
+        display: none;
+      }
       .player:before {
         content: "";
         position: absolute;
@@ -680,6 +694,12 @@
         place-items: center;
         font-size: 69px;
       }
+      .hexinside img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
       .problem-name {
         background: #e8000a;
         color: #fff;
@@ -913,6 +933,13 @@
         min-height: 260px;
         background: #e5ddd5;
         overflow: hidden;
+      }
+      .feedback-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        background: #fff;
       }
       .chat-head {
         background: #075e54;
@@ -1422,11 +1449,20 @@
       <section class="video-hero">
         <div class="wrap">
           <div class="player">
-            <img
-              src="assets/original-product-creative.webp"
-              class="video-img"
-              alt="VEDDAS SAKTEE product poster"
-            />
+            <video
+              id="productVideo"
+              class="hero-video"
+              poster="assets/original-product-creative.webp"
+              preload="auto"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+            >
+              <source src="assets/video.mp4" type="video/mp4" />
+              Your browser does not support HTML5 video.
+            </video>
             <div class="video-content">
               <div class="label" style="color: #ffdc3f">INTRODUCING</div>
               <h1><strong>VEDDAS</strong><br />SAKTEE</h1>
@@ -1442,7 +1478,7 @@
                 ▶
               </button>
               <div class="video-hint">
-                Product video slot — video not added yet
+                Click Play to watch the product video
               </div>
             </div>
           </div>
@@ -1632,19 +1668,19 @@
           </p>
           <div class="problem-grid">
             <div class="problem-card">
-              <div class="hexagon"><div class="hexinside">☾</div></div>
+              <div class="hexagon"><div class="hexinside"><img src="assets/problem-1.png" alt="Problem illustration 1" loading="lazy" /></div></div>
               <div class="problem-name">
                 <span>Irregular Sleep<br /><small>अनियमित नींद</small></span>
               </div>
             </div>
             <div class="problem-card">
-              <div class="hexagon"><div class="hexinside">◷</div></div>
+              <div class="hexagon"><div class="hexinside"><img src="assets/problem-2.png" alt="Problem illustration 2" loading="lazy" /></div></div>
               <div class="problem-name">
                 <span>Busy Routine<br /><small>व्यस्त दिनचर्या</small></span>
               </div>
             </div>
             <div class="problem-card">
-              <div class="hexagon"><div class="hexinside">⚡</div></div>
+              <div class="hexagon"><div class="hexinside"><img src="assets/problem-3.png" alt="Problem illustration 3" loading="lazy" /></div></div>
               <div class="problem-name">
                 <span
                   >Everyday Tiredness<br /><small>रोजमर्रा की थकान</small></span
@@ -1652,7 +1688,7 @@
               </div>
             </div>
             <div class="problem-card">
-              <div class="hexagon"><div class="hexinside">❧</div></div>
+              <div class="hexagon"><div class="hexinside"><img src="assets/problem-4.png" alt="Problem illustration 4" loading="lazy" /></div></div>
               <div class="problem-name">
                 <span
                   >Wellness Questions<br /><small
@@ -1889,31 +1925,19 @@
           <div class="chats-grid">
             <div class="chat-card">
               <div class="chat-head">FEEDBACK 01</div>
-              <div class="chat-demo">
-                <b>Customer message</b>
-                <p>Verified review screenshot placeholder</p>
-              </div>
+              <img class="feedback-image" src="assets/feedback-1.png" alt="Customer feedback 1" loading="lazy" />
             </div>
             <div class="chat-card">
               <div class="chat-head">FEEDBACK 02</div>
-              <div class="chat-demo">
-                <b>Customer message</b>
-                <p>Verified review screenshot placeholder</p>
-              </div>
+              <img class="feedback-image" src="assets/feedback-2.png" alt="Customer feedback 2" loading="lazy" />
             </div>
             <div class="chat-card">
               <div class="chat-head">FEEDBACK 03</div>
-              <div class="chat-demo">
-                <b>Customer message</b>
-                <p>Verified review screenshot placeholder</p>
-              </div>
+              <img class="feedback-image" src="assets/feedback-3.png" alt="Customer feedback 3" loading="lazy" />
             </div>
             <div class="chat-card">
               <div class="chat-head">FEEDBACK 04</div>
-              <div class="chat-demo">
-                <b>Customer message</b>
-                <p>Verified review screenshot placeholder</p>
-              </div>
+              <img class="feedback-image" src="assets/feedback-4.png" alt="Customer feedback 4" loading="lazy" />
             </div>
           </div>
         </div>
@@ -2002,16 +2026,30 @@
           clearTimeout(toastTimer);
           toastTimer = setTimeout(() => toast.classList.remove("show"), 4500);
         }
-        document
-          .getElementById("playVideo")
-          .addEventListener("click", () =>
-            showToast("ब्रांड की ओरिजिनल वीडियो मिलने पर यहाँ play होगी।"),
-          );
-        document
-          .getElementById("soundToggle")
-          .addEventListener("click", () =>
-            showToast("अभी कोई वीडियो या ऑडियो अपलोड नहीं है।"),
-          );
+        const productVideo = document.getElementById("productVideo");
+        const player = document.querySelector(".player");
+        const playButton = document.getElementById("playVideo");
+        const soundButton = document.getElementById("soundToggle");
+        productVideo.muted = true;
+        productVideo.loop = true;
+        productVideo.addEventListener("loadeddata", () => {
+          productVideo.play().catch(() => {});
+        });
+        productVideo.addEventListener("play", () => player.classList.add("is-playing"));
+        productVideo.addEventListener("pause", () => player.classList.remove("is-playing"));
+        productVideo.addEventListener("error", () => showToast("Video load नहीं हुई। assets/video.mp4 का path check करें।"));
+        playButton.addEventListener("click", async () => {
+          try {
+            await productVideo.play();
+            player.classList.add("is-playing");
+          } catch {
+            showToast("Video play नहीं हो पाई। assets/video.mp4 check करें।");
+          }
+        });
+        soundButton.addEventListener("click", () => {
+          productVideo.muted = !productVideo.muted;
+          soundButton.textContent = productVideo.muted ? "🔇 Play Sound" : "🔊 Mute Sound";
+        });
         // Deployed Google Apps Script Web App endpoint for VEDDAS SAKTEE leads.
         const APPS_SCRIPT_URL =
           "https://script.google.com/macros/s/AKfycbwzGxTECEI33Sxxx8ysSzquVbCEEKYktqGfA3H5e8U15490-vp8Jm7tVyU0Do1dq48G/exec";
