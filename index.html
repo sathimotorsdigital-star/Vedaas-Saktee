@@ -673,25 +673,26 @@
       .problem-card {
         text-align: center;
         background: #fff;
-        padding-top: 17px;
+        padding-top: 0;
         border: 1px solid #eee;
+        overflow: hidden;
       }
       .hexagon {
-        height: 155px;
-        width: 155px;
-        max-width: 93%;
-        clip-path: polygon(50% 0, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
-        background: linear-gradient(125deg, #ffdc07, #df0922, #512e83);
-        padding: 5px;
-        margin: 0 auto 11px;
+        height: 210px;
+        width: 100%;
+        max-width: none;
+        clip-path: none;
+        background: #fff;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
       }
       .hexinside {
-        clip-path: inherit;
+        clip-path: none;
         width: 100%;
         height: 100%;
-        background: radial-gradient(circle, #f4f8e4, #d1e9d7);
-        display: grid;
-        place-items: center;
+        background: #fff;
+        display: block;
         font-size: 69px;
       }
       .hexinside img {
@@ -832,6 +833,13 @@
         font-size: 55px;
         background: radial-gradient(circle, #fff8dc, #f8d855);
         border: 3px solid #d7ab25;
+        overflow: hidden;
+      }
+      .ingredient-illustration img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
       }
       .ingredient-row h3 {
         color: #bd000b;
@@ -1186,8 +1194,8 @@
           gap: 12px;
         }
         .hexagon {
-          height: 137px;
-          width: 137px;
+          height: 170px;
+          width: 100%;
         }
         .problem-name {
           font-size: 15px;
@@ -1281,8 +1289,8 @@
           font-size: 11px;
         }
         .hexagon {
-          width: 116px;
-          height: 125px;
+          width: 100%;
+          height: 150px;
         }
         .ingredient-row {
           grid-template-columns: 85px 1fr;
@@ -1412,6 +1420,59 @@
         .floating {
           display: none;
         }
+      }
+
+      /* Rolling 24-hour offer countdown (restarts automatically). */
+      .offer-clock {
+        background: #fff8df;
+        border-bottom: 1px solid #e5c568;
+        text-align: center;
+        padding: 15px 12px 17px;
+        color: #3b2600;
+      }
+      .offer-clock-title {
+        font-size: 17px;
+        font-weight: 900;
+        color: #ba070e;
+        margin: 0 0 7px;
+      }
+      .offer-clock-price {
+        font-size: 14px;
+        font-weight: 700;
+        margin: 0 0 12px;
+      }
+      .offer-clock-price strong { font-size: 21px; color: #bf0010; }
+      .offer-clock-display {
+        display: flex;
+        justify-content: center;
+        gap: 9px;
+        align-items: center;
+      }
+      .offer-clock-unit {
+        background: #191919;
+        color: white;
+        border-radius: 6px;
+        min-width: 66px;
+        padding: 9px 8px 6px;
+      }
+      .offer-clock-unit b {
+        display: block;
+        font-size: 27px;
+        font-variant-numeric: tabular-nums;
+        line-height: 1.1;
+      }
+      .offer-clock-unit span {
+        display: block;
+        font-size: 10px;
+        letter-spacing: .6px;
+        margin-top: 4px;
+      }
+      .offer-clock-colon { font-size: 22px; font-weight: 900; }
+      .offer-clock-note {
+        font-size: 11px;
+        line-height: 1.4;
+        margin: 10px 0 0;
+        color: #6a604b;
       }
     </style>
   </head>
@@ -1551,6 +1612,18 @@
             <div class="order-banner">
               <h2>BOOK YOUR ORDER</h2>
               <h3>अपना ऑर्डर दर्ज करें</h3>
+            </div>
+            <div class="offer-clock" aria-label="Rolling 24 hour special offer">
+              <p class="offer-clock-title">24-HOUR SPECIAL OFFER</p>
+              <p class="offer-clock-price">30 Capsules • Special Price <strong>₹1,299</strong> <del>₹1,999</del></p>
+              <div class="offer-clock-display" role="timer" aria-label="Time left in current 24-hour offer cycle">
+                <div class="offer-clock-unit"><b id="offerHours">24</b><span>HOURS</span></div>
+                <span class="offer-clock-colon">:</span>
+                <div class="offer-clock-unit"><b id="offerMinutes">00</b><span>MINUTES</span></div>
+                <span class="offer-clock-colon">:</span>
+                <div class="offer-clock-unit"><b id="offerSeconds">00</b><span>SECONDS</span></div>
+              </div>
+              <p class="offer-clock-note">Rolling 24-hour offer cycle — timer automatically restarts after zero. Offer availability is subject to confirmation.</p>
             </div>
             <div class="order-content">
               <div class="order-product">
@@ -1767,107 +1840,48 @@
       </div>
       <section class="sec ingredients" id="ingredients">
         <div class="wrap">
-          <h2 class="section-title blue">MAJOR INGREDIENTS USED FOR</h2>
+          <h2 class="section-title blue">HERBAL INGREDIENT EXAMPLES</h2>
           <div class="section-sub red">VEDDAS SAKTEE</div>
-          <div class="section-sub">प्रोडक्ट में इस्तेमाल की गई सामग्री</div>
+          <div class="section-sub">हर्बल सामग्री के उदाहरण — पैक लेबल से पुष्टि जरूरी</div>
           <div class="tline"></div>
           <p class="introtext">
-            संघटक सामग्री की विस्तृत जानकारी प्रोडक्ट के आधिकारिक पैक लेबल के
-            अनुसार यहाँ प्रकाशित की जाएगी। कृपया खरीदने और इस्तेमाल करने से पहले
-            पूरी सामग्री एवं सावधानियाँ अवश्य जाँचें।
+            नीचे दी गई वनस्पतियाँ केवल जानकारी और डिज़ाइन के उदाहरण हैं।
+            इन्हें VEDDAS SAKTEE की प्रमाणित सामग्री न समझें। वास्तविक सामग्री,
+            मात्रा और सावधानियाँ आधिकारिक पैक लेबल से ही जाँचें।
           </p>
           <div class="ingredient-row">
-            <div class="ingredient-illustration">❧</div>
+            <div class="ingredient-illustration"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Withania_somnifera.jpg" alt="ASHWAGANDHA (अश्वगंधा) botanical photograph" loading="lazy" referrerpolicy="no-referrer" /></div>
             <div>
-              <h3>INGREDIENT 01</h3>
-              <p>
-                पहली सामग्री का नाम, फोटो और विवरण आधिकारिक पैक लेबल के आधार पर
-                जोड़ा जाएगा।
-              </p>
+              <h3>ASHWAGANDHA (अश्वगंधा)</h3>
+              <p>अश्वगंधा आयुर्वेद में पहचानी जाने वाली जड़ी-बूटी है। उत्पाद में इसकी मौजूदगी पैक लेबल से सत्यापित करें।</p>
             </div>
           </div>
           <div class="ingredient-row">
-            <div class="ingredient-illustration">🌱</div>
+            <div class="ingredient-illustration"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Chlorophytum_borivilianum_%284695352035%29.jpg" alt="SAFED MUSLI (सफेद मूसली) botanical photograph" loading="lazy" referrerpolicy="no-referrer" /></div>
             <div>
-              <h3>INGREDIENT 02</h3>
-              <p>
-                दूसरी सामग्री का नाम, मात्रा और उचित विवरण सत्यापित जानकारी
-                मिलने पर जोड़ा जाएगा।
-              </p>
+              <h3>SAFED MUSLI (सफेद मूसली)</h3>
+              <p>सफेद मूसली एक पारंपरिक भारतीय वनस्पति है। इसकी मात्रा और उपलब्धता आधिकारिक पैक लेबल देखकर सुनिश्चित करें।</p>
             </div>
           </div>
           <div class="ingredient-row">
-            <div class="ingredient-illustration">🍃</div>
+            <div class="ingredient-illustration"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mucuna_pruriens.jpg" alt="KAUNCH BEEJ (कौंच बीज) botanical photograph" loading="lazy" referrerpolicy="no-referrer" /></div>
             <div>
-              <h3>INGREDIENT 03</h3>
-              <p>
-                तीसरी सामग्री का विवरण यहाँ होगा। किसी असत्यापित स्वास्थ्य लाभ
-                का दावा नहीं जोड़ा गया है।
-              </p>
+              <h3>KAUNCH BEEJ (कौंच बीज)</h3>
+              <p>कौंच बीज एक वनस्पति के बीज हैं। उत्पाद में शामिल होने की पुष्टि सामग्री सूची से करें।</p>
             </div>
           </div>
           <div class="ingredient-row">
-            <div class="ingredient-illustration">☘</div>
+            <div class="ingredient-illustration"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tribulus_Terrestris.jpg" alt="GOKSHURA (गोखरू) botanical photograph" loading="lazy" referrerpolicy="no-referrer" /></div>
             <div>
-              <h3>INGREDIENT 04</h3>
-              <p>
-                इस भाग में सामग्री का फोटो, नाम और लेबल पर मौजूद तथ्य जोड़े जा
-                सकते हैं।
-              </p>
+              <h3>GOKSHURA (गोखरू)</h3>
+              <p>गोखरू नाम से प्रसिद्ध इस पौधे की पहचान अलग है। वास्तविक मिश्रण और मात्रा लेबल पर जाँचें।</p>
             </div>
           </div>
           <div class="ingredient-row">
-            <div class="ingredient-illustration">✿</div>
+            <div class="ingredient-illustration"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Asparagus_racemosus.JPG" alt="SHATAVARI (शतावरी) botanical photograph" loading="lazy" referrerpolicy="no-referrer" /></div>
             <div>
-              <h3>INGREDIENT 05</h3>
-              <p>पाँचवीं सामग्री की जानकारी उपलब्ध होने पर यहाँ भरी जाएगी।</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="sec effects">
-        <div class="wrap">
-          <h2 class="section-title blue">PRODUCT INFORMATION</h2>
-          <div class="section-sub red">KNOW BEFORE YOU ORDER</div>
-          <div class="tline"></div>
-          <div class="effect-row">
-            <div class="effect-symbol">①</div>
-            <div>
-              <h3>PACK DETAILS (पैक की जानकारी)</h3>
-              <p>
-                प्रोडक्ट के प्रमोशनल पोस्टर में VEDDAS SAKTEE के एक पैक में 30
-                Capsules दर्शाए गए हैं।
-              </p>
-            </div>
-          </div>
-          <div class="effect-row">
-            <div class="effect-symbol">②</div>
-            <div>
-              <h3>INGREDIENT VERIFICATION (सामग्री का सत्यापन)</h3>
-              <p>
-                लेबल पर दी गई सामग्री, मात्रा, निर्माता और वैधानिक विवरण जांचना
-                ज़रूरी है।
-              </p>
-            </div>
-          </div>
-          <div class="effect-row">
-            <div class="effect-symbol">③</div>
-            <div>
-              <h3>USAGE INFORMATION (इस्तेमाल की जानकारी)</h3>
-              <p>
-                सेवन विधि, चेतावनियाँ और सावधानियाँ केवल आधिकारिक पैकेजिंग से ही
-                प्रस्तुत की जाएँगी।
-              </p>
-            </div>
-          </div>
-          <div class="effect-row">
-            <div class="effect-symbol">④</div>
-            <div>
-              <h3>ORDER &amp; DELIVERY (ऑर्डर और डिलीवरी)</h3>
-              <p>
-                Cash on Delivery का उल्लेख प्रोडक्ट पोस्टर पर है। अंतिम उपलब्धता
-                तथा डिलीवरी शर्तें विक्रेता से पुष्टि के अधीन हैं।
-              </p>
+              <h3>SHATAVARI (शतावरी)</h3>
+              <p>शतावरी एक जानी-पहचानी भारतीय वनस्पति है। यहाँ दिया चित्र उदाहरण है, वास्तविक सामग्री की पुष्टि जरूरी है।</p>
             </div>
           </div>
         </div>
@@ -1985,6 +1999,40 @@
     <div class="toast" id="toast" role="status"></div>
     <script>
       (function () {
+        // Rolling 24-hour timer. Preserve start across refreshes when storage is available.
+        (function initOfferCountdown() {
+          const cycleMs = 24 * 60 * 60 * 1000;
+          const storageKey = "veddas_offer_cycle_start_v1";
+          const hoursEl = document.getElementById("offerHours");
+          const minutesEl = document.getElementById("offerMinutes");
+          const secondsEl = document.getElementById("offerSeconds");
+          let start = Date.now();
+          try {
+            const saved = Number(localStorage.getItem(storageKey));
+            if (Number.isFinite(saved) && saved > 0 && saved <= Date.now()) {
+              start = saved;
+            } else {
+              localStorage.setItem(storageKey, String(start));
+            }
+          } catch (_) { /* Countdown still works without local storage. */ }
+          function updateOfferCountdown() {
+            const now = Date.now();
+            const elapsed = Math.max(0, now - start);
+            if (elapsed >= cycleMs) {
+              start += Math.floor(elapsed / cycleMs) * cycleMs;
+              try { localStorage.setItem(storageKey, String(start)); } catch (_) {}
+            }
+            const remainingSeconds = Math.ceil((cycleMs - Math.max(0, now - start)) / 1000);
+            const hh = Math.floor(remainingSeconds / 3600);
+            const mm = Math.floor((remainingSeconds % 3600) / 60);
+            const ss = remainingSeconds % 60;
+            hoursEl.textContent = String(hh).padStart(2, "0");
+            minutesEl.textContent = String(mm).padStart(2, "0");
+            secondsEl.textContent = String(ss).padStart(2, "0");
+          }
+          updateOfferCountdown();
+          setInterval(updateOfferCountdown, 1000);
+        })();
         const WhatsAppNumber = "917678225382"; // WhatsApp sales enquiries, India
         document.getElementById("year").textContent = new Date().getFullYear();
         const toast = document.getElementById("toast");
