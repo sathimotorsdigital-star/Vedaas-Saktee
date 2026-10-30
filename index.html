@@ -1665,52 +1665,17 @@
                   />
                 </div>
                 <div class="field">
-                  <label>आपकी पूछताछ किस बारे में है?</label>
-                  <div class="radios">
-                    <label
-                      ><input
-                        type="radio"
-                        name="query"
-                        value="Product information"
-                        checked
-                      />
-                      प्रोडक्ट जानकारी</label
-                    ><label
-                      ><input type="radio" name="query" value="Ingredients" />
-                      सामग्री की जानकारी</label
-                    ><label
-                      ><input
-                        type="radio"
-                        name="query"
-                        value="Order and delivery"
-                      />
-                      ऑर्डर / डिलीवरी</label
-                    ><label
-                      ><input
-                        type="radio"
-                        name="query"
-                        value="Other question"
-                      />
-                      अन्य सवाल</label
-                    >
-                  </div>
-                </div>
-                <div class="field">
                   <textarea
                     id="custNotes"
-                    placeholder="अपना सवाल लिखें (वैकल्पिक)"
+                    name="address"
+                    placeholder="Your Full Address / आपका पूरा पता"
                     maxlength="350"
-                    aria-label="Your question"
+                    autocomplete="street-address"
+                    required
+                    aria-label="Your Full Address"
                   ></textarea>
                 </div>
-                <label class="form-consent"
-                  ><input id="leadConsent" type="checkbox" required />
-                  <span
-                    >मैं सहमत हूँ कि VEDDAS SAKTEE की टीम मेरी दी हुई संपर्क
-                    जानकारी का उपयोग इस ऑर्डर / पूछताछ के संबंध में मुझसे संपर्क
-                    करने के लिए कर सकती है।</span
-                  ></label
-                ><button class="form-btn" type="submit">
+                <button class="form-btn" type="submit">
                   ORDER NOW ➜
                 </button>
                 <div id="formStatus" role="status" class="form-status"></div>
@@ -2096,7 +2061,7 @@
         };
         const unlock = () => {
           submitButton.disabled = false;
-          submitButton.textContent = "SUBMIT ORDER ENQUIRY ➜";
+          submitButton.textContent = "ORDER NOW ➜";
           pendingId = null;
           clearTimers();
         };
@@ -2210,23 +2175,20 @@
             document.getElementById("custPhone").focus();
             return;
           }
-          if (!document.getElementById("leadConsent").checked) {
-            showToast("कृपया संपर्क करने की अनुमति दें।");
-            document.getElementById("leadConsent").focus();
+          const address = document.getElementById("custNotes").value.trim();
+          if (address.length < 8) {
+            showToast("कृपया अपना पूरा पता भरें।");
+            document.getElementById("custNotes").focus();
             return;
           }
-          const query =
-            form.querySelector("input[name=query]:checked")?.value || "General";
-          const note = document.getElementById("custNotes").value.trim();
           orderText =
             "VEDDAS SAKTEE - Order Enquiry\nName: " +
             name +
             "\nPhone: " +
             phone +
-            "\nEnquiry: " +
-            query +
-            "\nProduct: VEDDAS SAKTEE (30 Capsules)\nAdvertised price: ₹1,299" +
-            (note ? "\nQuestion: " + note : "");
+            "\nFull Address: " +
+            address +
+            "\nProduct: VEDDAS SAKTEE (30 Capsules)\nAdvertised price: ₹1,299";
           if (!isConfigured()) {
             visibleStatus("Google Sheets connection अभी सक्रिय नहीं है।", true);
             copy.classList.add("show");
@@ -2263,10 +2225,8 @@
             submission_id: requestId,
             name,
             phone,
-            query,
-            note,
+            address,
             page_url: location.href.slice(0, 300),
-            consent: "yes",
             website: "",
           };
           for (const [k, v] of Object.entries(values)) {
