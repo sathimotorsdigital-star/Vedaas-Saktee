@@ -1,0 +1,18 @@
+
+{
+  "name": "vedaas-saktee",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-10-30",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "veddas-leads-backup",
+      "database_id": "c90da9f1-80a0-49a6-bf38-a04da06b383a"
+    }
+  ]
+}

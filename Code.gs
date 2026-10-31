@@ -1,5 +1,5 @@
 /**
- * VEDDAS SAKTEE lead receiver — Name / Phone / Full Address.
+ * VEDDAS SAKTEE lead receiver — Name / Phone / optional Address / Consent.
  * Keeps the existing 11-column Leads sheet structure and Lead ID deduplication.
  * After replacing Code.gs: Deploy > Manage deployments > Edit > New version > Deploy.
  * Web app: Execute as Me; access Anyone (for this existing public form workflow).
@@ -52,11 +52,12 @@ function doPost(e) {
     const name = cleanText_(p.name, 60);
     const phone = String(p.phone || '').trim();
     const address = cleanText_(p.address, 350);
+    const consent = String(p.consent || "").trim().toLowerCase();
     const pageURL = cleanText_(p.page_url, 300);
     if (name.length < 2 || !/^[6-9][0-9]{9}$/.test(phone)) {
       throw new Error('Name or phone is invalid');
     }
-    if (address.length < 8) throw new Error('Full address is required');
+    if (consent !== 'yes') throw new Error('Contact consent is required');
     if (!/^[a-zA-Z0-9_-]{8,90}$/.test(id)) throw new Error('Invalid submission ID');
 
     const lock = LockService.getScriptLock();
@@ -71,9 +72,9 @@ function doPost(e) {
         sheet.appendRow([
           Utilities.formatDate(new Date(), 'Asia/Kolkata', 'yyyy-MM-dd HH:mm:ss'),
           safeText_(id), safeText_(name), safeText_(phone),
-          'Order', safeText_(address),
+          address ? 'Order' : 'Enquiry', safeText_(address),
           'VEDDAS SAKTEE 30 Capsules', 1299,
-          safeText_(pageURL), 'New Lead', 'Not requested'
+          safeText_(pageURL), 'New Lead', 'Yes'
         ]);
         SpreadsheetApp.flush();
       }
