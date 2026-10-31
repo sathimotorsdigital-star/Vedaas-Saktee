@@ -1514,7 +1514,7 @@
               id="productVideo"
               class="hero-video"
               poster="assets/original-product-creative.webp"
-              preload="auto"
+              preload="metadata"
               autoplay
               muted
               loop
@@ -1584,7 +1584,7 @@
           <div class="pitch-grid">
             <div class="pitch-product">
               <img
-                src="assets/product-1.png"
+                src="assets/product-1.webp"
                 alt="VEDDAS SAKTEE green capsule bottle"
               />
             </div>
@@ -1628,7 +1628,7 @@
             <div class="order-content">
               <div class="order-product">
                 <img
-                  src="assets/veddas-saktee-bottle.png"
+                  src="assets/veddas-saktee-bottle.webp"
                   alt="VEDDAS SAKTEE bottle"
                 />
                 <div>
@@ -1668,12 +1668,18 @@
                   <textarea
                     id="custNotes"
                     name="address"
-                    placeholder="Your Full Address / आपका पूरा पता"
+                    placeholder="Full Address (optional) / पूरा पता (वैकल्पिक)"
                     maxlength="350"
                     autocomplete="street-address"
-                    required
                     aria-label="Your Full Address"
                   ></textarea>
+                </div>
+                <div class="field" style="font-size:12px;line-height:1.55;text-align:left;margin:7px 0 12px">
+                  <label style="display:flex;align-items:flex-start;gap:9px;cursor:pointer">
+                    <input type="checkbox" id="contactConsent" required style="margin-top:3px;width:17px;height:17px;flex-shrink:0" />
+                    <span>मैं VEDDAS SAKTEE को इस enquiry के लिए कॉल/WhatsApp पर संपर्क करने की अनुमति देता/देती हूँ।
+                      <a href="privacy.html" target="_blank" rel="noopener" style="text-decoration:underline">Privacy Notice</a>.</span>
+                  </label>
                 </div>
                 <button class="form-btn" type="submit">
                   ORDER NOW ➜
@@ -1682,6 +1688,10 @@
                 <button id="copyOrder" class="copybutton" type="button">
                   COPY ENQUIRY DETAILS
                 </button>
+                <a id="whatsAppFallback" href="#" target="_blank" rel="noopener" hidden
+                   style="display:none;background:#146c43;color:#fff;font-size:13px;font-weight:800;padding:12px 15px;border-radius:8px;margin-top:8px;text-align:center">
+                  SEND ENQUIRY ON WHATSAPP ↗
+                </a>
                 <p class="f-note">
                   फॉर्म जमा होने के बाद आपकी जानकारी केवल ऑर्डर / पूछताछ के लिए
                   रिकॉर्ड की जाएगी। ऑर्डर की पुष्टि विक्रेता द्वारा की जाएगी।
@@ -1706,19 +1716,19 @@
           </p>
           <div class="problem-grid">
             <div class="problem-card">
-              <div class="hexagon"><div class="hexinside"><img src="assets/problem-1.png" alt="Problem illustration 1" loading="lazy" /></div></div>
+              <div class="hexagon"><div class="hexinside"><img src="assets/problem-1.webp" alt="Problem illustration 1" loading="lazy" /></div></div>
               <div class="problem-name">
                 <span>Irregular Sleep<br /><small>अनियमित नींद</small></span>
               </div>
             </div>
             <div class="problem-card">
-              <div class="hexagon"><div class="hexinside"><img src="assets/problem-2.png" alt="Problem illustration 2" loading="lazy" /></div></div>
+              <div class="hexagon"><div class="hexinside"><img src="assets/problem-2.webp" alt="Problem illustration 2" loading="lazy" /></div></div>
               <div class="problem-name">
                 <span>Busy Routine<br /><small>व्यस्त दिनचर्या</small></span>
               </div>
             </div>
             <div class="problem-card">
-              <div class="hexagon"><div class="hexinside"><img src="assets/problem-3.png" alt="Problem illustration 3" loading="lazy" /></div></div>
+              <div class="hexagon"><div class="hexinside"><img src="assets/problem-3.webp" alt="Problem illustration 3" loading="lazy" /></div></div>
               <div class="problem-name">
                 <span
                   >Everyday Tiredness<br /><small>रोजमर्रा की थकान</small></span
@@ -1726,7 +1736,7 @@
               </div>
             </div>
             <div class="problem-card">
-              <div class="hexagon"><div class="hexinside"><img src="assets/problem-4.png" alt="Problem illustration 4" loading="lazy" /></div></div>
+              <div class="hexagon"><div class="hexinside"><img src="assets/problem-4.webp" alt="Problem illustration 4" loading="lazy" /></div></div>
               <div class="problem-name">
                 <span
                   >Wellness Questions<br /><small
@@ -1747,7 +1757,7 @@
           <div class="sol-box">
             <div class="sol-photo">
               <img
-                src="assets/veddas-saktee-bottle.png"
+                src="assets/veddas-saktee-bottle.webp"
                 alt="VEDDAS SAKTEE 30-capsule bottle"
               />
             </div>
@@ -1810,40 +1820,40 @@
           <div class="section-sub">हर्बल सामग्री के उदाहरण — पैक लेबल से पुष्टि जरूरी</div>
           <div class="tline"></div>
           <p class="introtext">
-            नीचे दी गई वनस्पतियाँ केवल जानकारी और डिज़ाइन के उदाहरण हैं।
+            नीचे दी गई वनस्पतियाँ केवल जानकारी और डिज़ाइन के उदाहरण हैं। चित्र AI द्वारा बनाए गए प्रतीकात्मक दृश्य हैं, असली सामग्री की फोटो नहीं।
             इन्हें VEDDAS SAKTEE की प्रमाणित सामग्री न समझें। वास्तविक सामग्री,
             मात्रा और सावधानियाँ आधिकारिक पैक लेबल से ही जाँचें।
           </p>
           <div class="ingredient-row">
-            <div class="ingredient-illustration"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Withania_somnifera.jpg" alt="ASHWAGANDHA (अश्वगंधा) botanical photograph" loading="lazy" referrerpolicy="no-referrer" /></div>
+            <div class="ingredient-illustration"><img src="assets/ingredients/ashwagandha.webp" alt="ASHWAGANDHA (अश्वगंधा) ingredient illustration" loading="lazy" /></div>
             <div>
               <h3>ASHWAGANDHA (अश्वगंधा)</h3>
               <p>अश्वगंधा आयुर्वेद में पहचानी जाने वाली जड़ी-बूटी है। उत्पाद में इसकी मौजूदगी पैक लेबल से सत्यापित करें।</p>
             </div>
           </div>
           <div class="ingredient-row">
-            <div class="ingredient-illustration"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Chlorophytum_borivilianum_%284695352035%29.jpg" alt="SAFED MUSLI (सफेद मूसली) botanical photograph" loading="lazy" referrerpolicy="no-referrer" /></div>
+            <div class="ingredient-illustration"><img src="assets/ingredients/safed-musli.webp" alt="SAFED MUSLI (सफेद मूसली) ingredient illustration" loading="lazy" /></div>
             <div>
               <h3>SAFED MUSLI (सफेद मूसली)</h3>
               <p>सफेद मूसली एक पारंपरिक भारतीय वनस्पति है। इसकी मात्रा और उपलब्धता आधिकारिक पैक लेबल देखकर सुनिश्चित करें।</p>
             </div>
           </div>
           <div class="ingredient-row">
-            <div class="ingredient-illustration"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mucuna_pruriens.jpg" alt="KAUNCH BEEJ (कौंच बीज) botanical photograph" loading="lazy" referrerpolicy="no-referrer" /></div>
+            <div class="ingredient-illustration"><img src="assets/ingredients/kaunch-beej.webp" alt="KAUNCH BEEJ (कौंच बीज) ingredient illustration" loading="lazy" /></div>
             <div>
               <h3>KAUNCH BEEJ (कौंच बीज)</h3>
               <p>कौंच बीज एक वनस्पति के बीज हैं। उत्पाद में शामिल होने की पुष्टि सामग्री सूची से करें।</p>
             </div>
           </div>
           <div class="ingredient-row">
-            <div class="ingredient-illustration"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tribulus_Terrestris.jpg" alt="GOKSHURA (गोखरू) botanical photograph" loading="lazy" referrerpolicy="no-referrer" /></div>
+            <div class="ingredient-illustration"><img src="assets/ingredients/gokshura.webp" alt="GOKSHURA (गोखरू) ingredient illustration" loading="lazy" /></div>
             <div>
               <h3>GOKSHURA (गोखरू)</h3>
               <p>गोखरू नाम से प्रसिद्ध इस पौधे की पहचान अलग है। वास्तविक मिश्रण और मात्रा लेबल पर जाँचें।</p>
             </div>
           </div>
           <div class="ingredient-row">
-            <div class="ingredient-illustration"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Asparagus_racemosus.JPG" alt="SHATAVARI (शतावरी) botanical photograph" loading="lazy" referrerpolicy="no-referrer" /></div>
+            <div class="ingredient-illustration"><img src="assets/ingredients/shatavari.webp" alt="SHATAVARI (शतावरी) ingredient illustration" loading="lazy" /></div>
             <div>
               <h3>SHATAVARI (शतावरी)</h3>
               <p>शतावरी एक जानी-पहचानी भारतीय वनस्पति है। यहाँ दिया चित्र उदाहरण है, वास्तविक सामग्री की पुष्टि जरूरी है।</p>
@@ -1873,19 +1883,19 @@
           <div class="chats-grid">
             <div class="chat-card">
               <div class="chat-head">FEEDBACK 01</div>
-              <img class="feedback-image" src="assets/feedback-1.png" alt="Customer feedback 1" loading="lazy" />
+              <img class="feedback-image" src="assets/feedback-1.webp" alt="Customer feedback 1" loading="lazy" />
             </div>
             <div class="chat-card">
               <div class="chat-head">FEEDBACK 02</div>
-              <img class="feedback-image" src="assets/feedback-2.png" alt="Customer feedback 2" loading="lazy" />
+              <img class="feedback-image" src="assets/feedback-2.webp" alt="Customer feedback 2" loading="lazy" />
             </div>
             <div class="chat-card">
               <div class="chat-head">FEEDBACK 03</div>
-              <img class="feedback-image" src="assets/feedback-3.png" alt="Customer feedback 3" loading="lazy" />
+              <img class="feedback-image" src="assets/feedback-3.webp" alt="Customer feedback 3" loading="lazy" />
             </div>
             <div class="chat-card">
               <div class="chat-head">FEEDBACK 04</div>
-              <img class="feedback-image" src="assets/feedback-4.png" alt="Customer feedback 4" loading="lazy" />
+              <img class="feedback-image" src="assets/feedback-4.webp" alt="Customer feedback 4" loading="lazy" />
             </div>
           </div>
         </div>
@@ -1924,6 +1934,7 @@
           यह वेबसाइट डेमो है; किसी चिकित्सा लाभ या परिणाम की गारंटी नहीं दी गई
           है।
         </p>
+        <p style="font-size:12px"><a href="ingredient-illustrations.html" target="_blank" rel="noopener">About ingredient illustrations</a></p>
         <small
           >© <span id="year"></span> VEDDAS SAKTEE. All rights reserved.</small
         >
@@ -1962,6 +1973,7 @@
       <a href="#order">ORDER NOW ➜</a>
     </div>
     <div class="toast" id="toast" role="status"></div>
+    <script src="site-config.js"></script>
     <script>
       (function () {
         // Rolling 24-hour timer. Preserve start across refreshes when storage is available.
@@ -2008,27 +2020,63 @@
           clearTimeout(toastTimer);
           toastTimer = setTimeout(() => toast.classList.remove("show"), 4500);
         }
+        // Video is loaded only on a real click. Optional YouTube video ID can be configured in site-config.js.
+        // No names/phone/address are ever sent with analytics events.
+        const utm = new URLSearchParams(location.search);
+        const campaign = (utm.get("utm_campaign") || "").slice(0, 70).replace(/[^a-zA-Z0-9_ .-]/g, "");
+        const trafficSource = (utm.get("utm_source") || "").slice(0, 45).replace(/[^a-zA-Z0-9_ .-]/g, "");
+        function trackEvent(eventName) {
+          const payload = JSON.stringify({event: eventName, campaign, source: trafficSource});
+          try {
+            if (navigator.sendBeacon && navigator.sendBeacon("/api/event", new Blob([payload], {type: "application/json"}))) return;
+            fetch("/api/event", {method: "POST", headers: {"Content-Type":"application/json"}, body: payload, keepalive: true}).catch(() => {});
+          } catch (_) { /* Analytics must never block the user. */ }
+        }
+        trackEvent("page_view");
+        document.querySelectorAll('a[href*="wa.me/"]').forEach(a => a.addEventListener("click", () => trackEvent("whatsapp_click")));
+        document.querySelectorAll('a[href^="tel:"]').forEach(a => a.addEventListener("click", () => trackEvent("call_click")));
         const productVideo = document.getElementById("productVideo");
         const player = document.querySelector(".player");
         const playButton = document.getElementById("playVideo");
         const soundButton = document.getElementById("soundToggle");
+        const youtubeId = String(window.VEDDAS_CONFIG?.youtubeVideoId || "").trim();
+        let videoLoaded = true;
         productVideo.muted = true;
-        productVideo.loop = true;
-        productVideo.addEventListener("loadeddata", () => {
-          productVideo.play().catch(() => {});
+        productVideo.loop = false;
+        playButton.addEventListener("click", async () => {
+          trackEvent("video_play");
+          if (/^[A-Za-z0-9_-]{11}$/.test(youtubeId)) {
+            const embed = document.createElement("iframe");
+            embed.src = "https://www.youtube-nocookie.com/embed/" + youtubeId + "?autoplay=1&rel=0";
+            embed.title = "VEDDAS SAKTEE product video";
+            embed.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
+            embed.allowFullscreen = true;
+            embed.style.cssText = "position:absolute;inset:0;width:100%;height:100%;border:0;z-index:10";
+            player.appendChild(embed);
+            soundButton.hidden = true;
+            return;
+          }
+          try {
+            if (!videoLoaded) {
+              const source = productVideo.querySelector("source");
+              source.src = source.dataset.src;
+              productVideo.load();
+              videoLoaded = true;
+            }
+            productVideo.muted = false;
+            await productVideo.play();
+            player.classList.add("is-playing");
+            soundButton.textContent = "🔊 Mute Sound";
+          } catch (_) {
+            trackEvent("video_error");
+            showToast("Video load नहीं हुई। कृपया इंटरनेट कनेक्शन चेक करें।");
+          }
         });
         productVideo.addEventListener("play", () => player.classList.add("is-playing"));
         productVideo.addEventListener("pause", () => player.classList.remove("is-playing"));
-        productVideo.addEventListener("error", () => showToast("Video load नहीं हुई। assets/video.mp4 का path check करें।"));
-        playButton.addEventListener("click", async () => {
-          try {
-            await productVideo.play();
-            player.classList.add("is-playing");
-          } catch {
-            showToast("Video play नहीं हो पाई। assets/video.mp4 check करें।");
-          }
-        });
+        productVideo.addEventListener("error", () => { trackEvent("video_error"); showToast("Video load नहीं हो पाई।"); });
         soundButton.addEventListener("click", () => {
+          if (!videoLoaded) { playButton.click(); return; }
           productVideo.muted = !productVideo.muted;
           soundButton.textContent = productVideo.muted ? "🔇 Play Sound" : "🔊 Mute Sound";
         });
@@ -2039,219 +2087,154 @@
           status = document.getElementById("formStatus"),
           copy = document.getElementById("copyOrder");
         const submitButton = form.querySelector('button[type="submit"]');
-        let orderText = "",
-          pendingId = null,
-          expiry = null,
-          checkTimer = null,
-          checkCount = 0;
-        const isConfigured = () =>
-          /^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(
-            APPS_SCRIPT_URL.trim(),
-          );
+        const whatsAppFallback = document.getElementById("whatsAppFallback");
+        let orderText = "", pendingId = null, checkTimer = null, checkCount = 0;
+        let finished = false;
+        let formStarted = false;
+        form.addEventListener("focusin", () => {
+          if (!formStarted) { formStarted = true; trackEvent("form_start"); }
+        });
+        const isConfigured = () => /^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(APPS_SCRIPT_URL.trim());
         const visibleStatus = (msg, failed = false) => {
           status.textContent = msg;
           status.classList.add("show");
           status.classList.toggle("error", failed);
         };
-        const clearTimers = () => {
-          clearTimeout(expiry);
-          clearTimeout(checkTimer);
-          expiry = null;
-          checkTimer = null;
-        };
-        const unlock = () => {
+        function unlock() {
           submitButton.disabled = false;
           submitButton.textContent = "ORDER NOW ➜";
           pendingId = null;
-          clearTimers();
-        };
-        const saved = () => {
-          visibleStatus(
-            "✅ आपकी enquiry Google Sheet में सेव होने की पुष्टि हो गई है। हमारी टीम 7678225382 से आपसे संपर्क कर सकती है।",
-          );
+          clearTimeout(checkTimer);
+        }
+        function finishSuccess(which) {
+          if (finished) return;
+          finished = true;
+          trackEvent(which === "sheet" ? "lead_saved_sheet" : "lead_saved_backup");
+          if (which === "sheet") {
+            visibleStatus("✅ आपकी enquiry Google Sheet में सेव हो गई है। हमारी टीम 7678225382 से संपर्क कर सकती है।");
+          } else {
+            visibleStatus("✅ आपकी enquiry Cloudflare के सुरक्षित backup में सेव है। Google Sheet में पहुँचने की पुष्टि अभी बाकी है। हमारी टीम आपसे संपर्क कर सकती है।");
+          }
           form.reset();
           copy.classList.remove("show");
+          whatsAppFallback.hidden = true;
+          whatsAppFallback.style.display = "none";
           unlock();
-        };
-        const fail = () => {
-          visibleStatus(
-            "❌ Google Sheet में enquiry सेव होने की पुष्टि नहीं हुई। Apps Script की deployment और permissions चेक करें। जरूरत हो तो 7678225382 पर संपर्क करें।",
-            true,
-          );
+          formStarted = false;
+        }
+        function failSubmission() {
+          if (finished) return;
+          finished = true;
+          trackEvent("lead_send_failed");
+          visibleStatus("❌ Enquiry सेव होने की पुष्टि नहीं हुई। कृपया नीचे से enquiry details कॉपी करें या WhatsApp पर संपर्क करें।", true);
           copy.classList.add("show");
+          whatsAppFallback.href = "https://wa.me/917678225382?text=" + encodeURIComponent(orderText);
+          whatsAppFallback.hidden = false;
+          whatsAppFallback.style.display = "block";
           unlock();
-        };
-        // Fast acknowledgement when Google HtmlService can message the parent window.
-        const receiveSaved = (event) => {
-          if (
-            !/^https:\/\/(?:script\.google\.com|[A-Za-z0-9.-]+\.googleusercontent\.com)$/.test(
-              event.origin,
-            )
-          )
-            return;
-          const payload = event.data;
-          if (
-            !payload ||
-            payload.type !== "VEDDAS_LEAD_RESULT" ||
-            !pendingId ||
-            payload.id !== pendingId
-          )
-            return;
-          if (payload.ok) saved(); // Script only sends ok after Sheet append succeeds.
-          // If the immediate iframe response fails, the JSONP checker below keeps polling.
-        };
-        window.addEventListener("message", receiveSaved);
-        // Cross-domain read-only confirmation. The response only contains an unguessable lead ID and saved=true/false.
-        const checkStored = (id) => {
-          if (id !== pendingId) return;
-          checkCount++;
-          const cb = "veddasAck_" + id.replace(/-/g, "_");
-          const script = document.createElement("script");
-          script.async = true;
-          let resolved = false;
-          const remove = () => {
-            delete window[cb];
-            script.remove();
-          };
-          window[cb] = (result) => {
-            if (resolved) return;
-            resolved = true;
-            remove();
-            if (pendingId !== id) return;
-            if (
-              result &&
-              result.type === "VEDDAS_LEAD_CHECK" &&
-              result.id === id &&
-              result.saved
-            ) {
-              saved();
-              return;
-            }
-            scheduleNext(id);
-          };
-          script.onerror = () => {
-            if (resolved) return;
-            resolved = true;
-            remove();
-            scheduleNext(id);
-          };
-          script.src =
-            APPS_SCRIPT_URL +
-            "?action=status&id=" +
-            encodeURIComponent(id) +
-            "&callback=" +
-            encodeURIComponent(cb) +
-            "&_t=" +
-            Date.now();
-          document.head.appendChild(script);
-          setTimeout(() => {
-            if (!resolved && pendingId === id) {
-              resolved = true;
-              remove();
-              scheduleNext(id);
-            }
-          }, 5000);
-        };
-        const scheduleNext = (id) => {
-          if (pendingId !== id) return;
-          if (checkCount >= 8) {
-            fail();
-            return;
-          }
+        }
+        // Apps Script HTML iframe sends this only after saving the row.
+        window.addEventListener("message", (event) => {
+          if (!/^https:\/\/(?:script\.google\.com|[A-Za-z0-9.-]+\.googleusercontent\.com)$/.test(event.origin)) return;
+          const p = event.data;
+          if (p && p.type === "VEDDAS_LEAD_RESULT" && pendingId && p.id === pendingId && p.ok) finishSuccess("sheet");
+        });
+        function scheduleStatus(id) {
+          if (pendingId !== id || finished) return;
+          if (checkCount >= 8) { failSubmission(); return; }
           checkTimer = setTimeout(() => checkStored(id), 3000);
-        };
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
-          if (pendingId) return;
-          const name = document.getElementById("custName").value.trim();
-          const phone = document.getElementById("custPhone").value.trim();
-          if (name.length < 2) {
-            showToast("कृपया अपना नाम भरें।");
-            document.getElementById("custName").focus();
-            return;
-          }
-          if (!/^[6-9][0-9]{9}$/.test(phone)) {
-            showToast("कृपया सही 10 अंकों का मोबाइल नंबर भरें।");
-            document.getElementById("custPhone").focus();
-            return;
-          }
-          const address = document.getElementById("custNotes").value.trim();
-          if (address.length < 8) {
-            showToast("कृपया अपना पूरा पता भरें।");
-            document.getElementById("custNotes").focus();
-            return;
-          }
-          orderText =
-            "VEDDAS SAKTEE - Order Enquiry\nName: " +
-            name +
-            "\nPhone: " +
-            phone +
-            "\nFull Address: " +
-            address +
-            "\nProduct: VEDDAS SAKTEE (30 Capsules)\nAdvertised price: ₹1,299";
-          if (!isConfigured()) {
-            visibleStatus("Google Sheets connection अभी सक्रिय नहीं है।", true);
-            copy.classList.add("show");
-            return;
-          }
-          const requestId =
-            window.crypto?.randomUUID?.() ||
-            "v" + Date.now() + "_" + Math.random().toString(36).slice(2);
-          pendingId = requestId;
-          checkCount = 0;
-          submitButton.disabled = true;
-          submitButton.textContent = "SAVING...";
-          visibleStatus(
-            "आपकी enquiry Google Sheet में सेव की जा रही है, कृपया पेज बंद न करें...",
-          );
+        }
+        // Google Apps Script JSONP acknowledgement: only unguessable ID and saved true/false.
+        function checkStored(id) {
+          if (pendingId !== id || finished || !isConfigured()) return;
+          checkCount++;
+          const callback = "veddasAck_" + id.replace(/-/g, "_");
+          const script = document.createElement("script");
+          let resolved = false;
+          const cleanup = () => { delete window[callback]; script.remove(); };
+          window[callback] = result => {
+            if (resolved) return;
+            resolved = true; cleanup();
+            if (pendingId !== id || finished) return;
+            if (result && result.type === "VEDDAS_LEAD_CHECK" && result.id === id && result.saved) {
+              finishSuccess("sheet");
+            } else scheduleStatus(id);
+          };
+          script.onerror = () => { if (resolved) return; resolved = true; cleanup(); scheduleStatus(id); };
+          script.src = APPS_SCRIPT_URL + "?action=status&id=" + encodeURIComponent(id) + "&callback=" + encodeURIComponent(callback);
+          document.head.appendChild(script);
+          setTimeout(() => { if (!resolved) { resolved = true; cleanup(); scheduleStatus(id); } }, 5000);
+        }
+        function sendToAppsScript(values) {
+          if (!isConfigured()) return;
           let receiver = document.getElementById("lead-post-frame");
           if (!receiver) {
             receiver = document.createElement("iframe");
-            receiver.name = "lead-post-frame";
-            receiver.id = "lead-post-frame";
+            receiver.name = receiver.id = "lead-post-frame";
             receiver.title = "Lead receiver";
             receiver.setAttribute("aria-hidden", "true");
-            receiver.style.cssText =
-              "position:absolute;width:1px;height:1px;border:0;opacity:0;pointer-events:none";
+            receiver.style.cssText = "position:absolute;width:1px;height:1px;border:0;opacity:0;pointer-events:none";
             document.body.appendChild(receiver);
           }
           const proxy = document.createElement("form");
           proxy.method = "POST";
           proxy.action = APPS_SCRIPT_URL;
-          proxy.target = "lead-post-frame";
+          proxy.target = receiver.name;
           proxy.acceptCharset = "UTF-8";
           proxy.style.display = "none";
-          const values = {
-            submission_id: requestId,
-            name,
-            phone,
-            address,
-            page_url: location.href.slice(0, 300),
-            website: "",
-          };
           for (const [k, v] of Object.entries(values)) {
             const input = document.createElement("input");
-            input.type = "hidden";
-            input.name = k;
-            input.value = String(v);
+            input.type = "hidden"; input.name = k; input.value = String(v);
             proxy.appendChild(input);
           }
           document.body.appendChild(proxy);
-          try {
-            proxy.submit();
-          } catch (err) {
-            visibleStatus(
-              "Submission शुरू नहीं हुआ। Internet connection चेक करें।",
-              true,
-            );
-            unlock();
-            proxy.remove();
-            return;
-          }
+          try { proxy.submit(); } catch (_) { trackEvent("sheet_post_error"); }
           proxy.remove();
-          // Poll for an actual row, not just a HTTP/iframe response.
-          checkTimer = setTimeout(() => checkStored(requestId), 3000);
+          checkTimer = setTimeout(() => checkStored(values.submission_id), 3000);
+        }
+        // D1 is a SEPARATE store. A working Sheets response is not required for this backup.
+        async function sendToCloudflare(values) {
+          const controller = new AbortController();
+          const timeout = setTimeout(() => controller.abort(), 12000);
+          try {
+            const response = await fetch("/api/lead", {
+              method: "POST", headers: {"Content-Type":"application/json"},
+              body: JSON.stringify(values), signal: controller.signal
+            });
+            const result = await response.json();
+            if (response.ok && result.stored && result.id === values.submission_id) finishSuccess("backup");
+          } catch (_) { /* Google Sheets will still be attempted. */ }
+          finally { clearTimeout(timeout); }
+        }
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          if (pendingId) return;
+          const name = document.getElementById("custName").value.trim();
+          const phone = document.getElementById("custPhone").value.trim();
+          const address = document.getElementById("custNotes").value.trim();
+          const consent = document.getElementById("contactConsent").checked;
+          if (name.length < 2) { trackEvent("form_invalid"); showToast("कृपया नाम भरें।"); document.getElementById("custName").focus(); return; }
+          if (!/^[6-9][0-9]{9}$/.test(phone)) { trackEvent("form_invalid"); showToast("कृपया सही 10 अंकों का नंबर भरें।"); document.getElementById("custPhone").focus(); return; }
+          if (!consent) { trackEvent("form_invalid"); showToast("संपर्क करने की अनुमति दें।"); document.getElementById("contactConsent").focus(); return; }
+          orderText = "VEDDAS SAKTEE - Enquiry\nName: " + name + "\nPhone: " + phone +
+            "\nAddress: " + (address || "Not provided") + "\nProduct: VEDDAS SAKTEE (30 Capsules)\nOffer Price: ₹1,299";
+          const requestId = window.crypto?.randomUUID?.() || "v" + Date.now() + "_" + Math.random().toString(36).slice(2);
+          pendingId = requestId; finished = false; checkCount = 0;
+          whatsAppFallback.hidden = true;
+          whatsAppFallback.style.display = "none";
+          submitButton.disabled = true; submitButton.textContent = "SAVING...";
+          visibleStatus("आपकी enquiry Google Sheet और सुरक्षित backup में भेजी जा रही है...");
+          trackEvent("form_submit_attempt");
+          const values = {
+            submission_id: requestId, name, phone, address,
+            page_url: location.origin + location.pathname + location.search,
+            consent: "yes", website: "", campaign, source: trafficSource
+          };
+          sendToCloudflare(values);
+          sendToAppsScript(values);
+          if (!isConfigured()) checkTimer = setTimeout(failSubmission, 14000);
         });
+        whatsAppFallback.addEventListener("click", () => trackEvent("whatsapp_click"));
         copy.addEventListener("click", async function () {
           try {
             await navigator.clipboard.writeText(orderText);
